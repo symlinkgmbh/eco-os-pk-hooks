@@ -19,6 +19,7 @@
 
 const HOOKSERVICETYPES = {
   IUserHooks: Symbol.for("IUserHooks"),
+  IFederationHooks: Symbol.for("IFederationHooks"),
 };
 
 export { HOOKSERVICETYPES };

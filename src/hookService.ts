@@ -22,10 +22,17 @@ import { PkHooks } from "@symlinkde/eco-os-pk-models";
 import { Container } from "inversify";
 import { UserHooks } from "./userHooks";
 import { HOOKSERVICETYPES } from "./hookServiceTypes";
+import { FederationHooks } from "./federationHooks";
 
 const hookService = new Container();
 hookService
   .bind<PkHooks.IUserHooks>(HOOKSERVICETYPES.IUserHooks)
   .to(UserHooks)
   .inSingletonScope();
+
+hookService
+  .bind<PkHooks.IFederationHooks>(HOOKSERVICETYPES.IFederationHooks)
+  .to(FederationHooks)
+  .inSingletonScope();
+
 export { hookService };

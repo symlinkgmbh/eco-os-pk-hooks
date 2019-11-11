@@ -17,5 +17,18 @@
 
 
 
-export { injectUserHooks } from "./userHookDecorator";
-export { injectFederationHooks } from "./federationHookDecorator";
+import { PkHooks } from "@symlinkde/eco-os-pk-models";
+import { hookService } from "../hookService";
+import { HOOKSERVICETYPES } from "../hookServiceTypes";
+
+// tslint:disable-next-line:typedef
+function injectFederationHooks<T extends new (...args: any[]) => {}>(constructor: T) {
+  return class extends constructor {
+    // tslint:disable-next-line: member-access
+    federationHooks: PkHooks.IFederationHooks = hookService.get<PkHooks.IFederationHooks>(
+      HOOKSERVICETYPES.IFederationHooks,
+    );
+  };
+}
+
+export { injectFederationHooks };

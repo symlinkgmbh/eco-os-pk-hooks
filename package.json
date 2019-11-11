@@ -1,6 +1,6 @@
 {
   "name": "@symlinkde/eco-os-pk-hooks",
-  "version": "0.0.31",
+  "version": "0.0.37",
   "description": "Package for asynchronous hooks which are processed by the queue service",
   "types": "lib/index.d.ts",
   "main": "lib/index.js",

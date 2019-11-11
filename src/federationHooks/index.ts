@@ -17,5 +17,4 @@
 
 
 
-export { injectUserHooks } from "./userHookDecorator";
-export { injectFederationHooks } from "./federationHookDecorator";
+export { FederationHooks } from "./FederationHooks";
